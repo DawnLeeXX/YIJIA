@@ -1,0 +1,159 @@
+$color-primary: #ea541a;
+.theme-gradient {
+  background:-webkit-linear-gradient(left,#ea541a,#ef7b1c);
+  background:-o-linear-gradient(right,#ea541a,#ef7b1c);
+  background:-moz-linear-gradient(right,#ea541a,#ef7b1c);
+  background:linear-gradient(to right,#ea541a,#ef7b1c);
+}
+
+
+// flex 全局定义
+.basis-flex-father{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+// flex-direction flex-wrap
+.basis-flex-row-wrap {
+  flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+}
+.basis-flex-column-wrap {
+  flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
+}
+
+// justify-content
+.basis-flex-justify-content-flex_start {
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+.basis-flex-justify-content-flex_end {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+.basis-flex-justify-content-center {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.basis-flex-justify-content-space_between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.basis-flex-justify-content-space_around {
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+
+// align-items
+.basis-flex-align-items-flex_start {
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+.basis-flex-align-items-flex_end {
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+.basis-flex-align-items-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+.basis-flex-align-items-baseline {
+  align-items: baseline;
+  -webkit-align-items: baseline;
+}
+.basis-flex-align-items-stretch {
+  align-items: stretch;
+  -webkit-align-items: stretch;
+}
+.flex-row-wrap-flex_start-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-row-wrap;
+  @extend .basis-flex-justify-content-flex_start;
+  @extend .basis-flex-align-items-center;
+}
+.flex-row-wrap-center-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-row-wrap;
+  @extend .basis-flex-justify-content-center;
+  @extend .basis-flex-align-items-center;
+}
+.flex-row-wrap-space_between-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-row-wrap;
+  @extend .basis-flex-justify-content-space_between;
+  @extend .basis-flex-align-items-center;
+}
+.flex-row-wrap-space_around-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-row-wrap;
+  @extend .basis-flex-justify-content-space_around;
+  @extend .basis-flex-align-items-center;
+}
+.flex-column-wrap-center-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-column-wrap;
+  @extend .basis-flex-justify-content-center;
+  @extend .basis-flex-align-items-center;
+}
+
+
+
+/* 覆盖mint ui 的样式 */
+/* 覆盖mint-ui的primary颜色，改为微信UI的绿色 */
+
+.mint-header {
+  background-color: $color-primary;
+}
+.mint-button:not(.is-disabled):active::after {
+  opacity: .2 /* .6 */
+}
+.mint-button--primary {
+  background-color: $color-primary;
+}
+.mint-button--primary.is-plain {
+  border: 1px solid $color-primary;
+  color: $color-primary
+}
+.mint-badge.is-primary {
+  background-color: $color-primary
+}
+.mint-switch-input:checked + .mint-switch-core {
+  border-color: $color-primary;
+  background-color: $color-primary;
+}
+.mint-navbar .mint-tab-item.is-selected {
+  border-bottom: 3px solid $color-primary;
+  color: $color-primary;
+}
+.mint-tabbar > .mint-tab-item.is-selected {
+  color: $color-primary;
+}
+.mint-searchbar-cancel {
+  color: $color-primary;
+}
+.mint-checkbox-input:checked + .mint-checkbox-core {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+.mint-radio-input:checked + .mint-radio-core {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+.mt-range-progress {
+  background-color: $color-primary;
+}
+.mt-progress-progress {
+  background-color: $color-primary;
+}
+.mint-msgbox-confirm {
+  color: $color-primary;
+}
+.mint-msgbox-confirm:active {
+  color: $color-primary;
+}
+.mint-datetime-action {
+  color: $color-primary;
+}
+
