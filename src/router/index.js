@@ -17,7 +17,34 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: () => import('../view/Home.vue')
+      components: {
+        default: () => import('../view/Home.vue'),
+        footer: () => import('../view/common/Tabbar.vue')
+      }
+    },
+    {
+      path: '/classify',
+      name: 'classify',
+      components: {
+        default: () => import('../view/Classify.vue'),
+        footer: () => import('../view/common/Tabbar.vue')
+      }
+    },
+    {
+      path: '/shopping_trolley',
+      name: 'shopping_trolley',
+      components: {
+        default: () => import('../view/ShoppingTrolley.vue'),
+        footer: () => import('../view/common/Tabbar.vue')
+      }
+    },
+    {
+      path: '/member',
+      name: 'member',
+      components: {
+        default: () => import('../view/Member.vue'),
+        footer: () => import('../view/common/Tabbar.vue')
+      }
     },
     {
       path: '/register',

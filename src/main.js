@@ -5,6 +5,7 @@ import './mintUI'
 import App from './App'
 import router from './router/index'
 import store from './store'
+import 'lib-flexible/flexible.js'
 import './assets/css/globe.css'
 Vue.config.productionTip = false
 

@@ -17,8 +17,8 @@
     }
     .login-input {
       margin-top: 20px !important;
+      padding-bottom: 20px;
       width: 500px;
-      height: 80px;
       border-bottom: 1px solid #d6d6d6;
       input {
         height: 80px;
@@ -100,7 +100,7 @@
         'setloginForm' // 设置vuex state loginForm值
       ]),
       register() {
-        console.log('aaa')
+        this.$router.push('register')
       },
       login() {
         if (this.isPassword === true) {
@@ -108,7 +108,7 @@
         } else {
           this.setloginForm(null)
         }
-
+        this.$router.push('home')
       }
     }
   }
