@@ -156,4 +156,20 @@ $color-primary: #ea541a;
 .mint-datetime-action {
   color: $color-primary;
 }
+.mint-search {
+  height: auto;
+  width: 96%;
+  margin: 0 auto !important;
+  .mint-searchbar {
+    background-color: white;
+    border-radius: 100px;
+    line-height: 30px;
+  }
+}
+.mint-swipe {
+  height: 300px;
+  img {
+    width: 100%;
+  }
+}
 
