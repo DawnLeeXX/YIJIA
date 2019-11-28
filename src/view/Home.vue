@@ -1,11 +1,18 @@
 <style lang="scss" scoped>
   .home-contain {
     background: white;
-    padding-bottom: 20px;
+    height: 100vh;
+    padding-bottom: 100px;
+    overflow-y: scroll;
+    padding-top: 80px;
     .home-search {
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       text-align: center;
-      padding: 2% 0;
+      padding: 15px 0;
       @extend .theme-gradient
     }
     .home-product-type-list {
@@ -26,13 +33,42 @@
     .home-product-list {
       ul {
         li {
-          padding-top: 20px;
-          width: 44%;
+          padding: 20px;
+          width: 38%;
           border: .0333rem solid #ecebeb;
           border-radius: 10px;
-          margin-bottom: 20px;
+          margin-bottom: 20px !important;
           img {
             width: 80%;
+          }
+          .home-price {
+            color: $color-primary;
+          }
+          .home-add-cart {
+            background: $color-primary;
+            padding: 5px 10px;
+            color: white;
+            border-color: $color-primary;
+            border-radius: 10px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
+          .home-bottom {
+            color: #666;
+            font-size: 12px;
+            .home-collection {
+              display: inline-block;
+              margin-right: 5px;
+              background: url("../assets/img/home/heart.png") no-repeat;
+              width: 20px;
+              height: 18px;
+              background-size: cover;
+              &.active {
+                background: url("../assets/img/home/heart_active.png") no-repeat;
+                background-size: cover;
+              }
+            }
           }
         }
       }
@@ -51,6 +87,7 @@
       <mt-swipe-item><img src="../assets/img/banner/banner.png" alt=""></mt-swipe-item>
       <mt-swipe-item><img src="../assets/img/banner/banner.png" alt=""></mt-swipe-item>
     </mt-swipe>
+
     <div class="home-product-type-list">
       <ul class="flex-row-wrap-space_around-center">
         <li v-for="item in product_type_list">
@@ -59,14 +96,24 @@
         </li>
       </ul>
     </div>
+
     <div class="home-product-list">
       <ul class="flex-row-wrap-space_around-center">
         <li v-for="item in product_list">
           <div class="flex-row-wrap-center-center"><img :src="item.img" alt=""></div>
-          <div>[{{item.pruduct}}]</div>
+          <div>[{{item.pruduct}}] {{item.description}}</div>
+          <div class="flex-row-wrap-space_between-center">
+            <div class="home-price">P {{item.price}}</div>
+            <button class="home-add-cart">加入购物车</button>
+          </div>
+          <div class="flex-row-wrap-space_between-center home-bottom">
+            <div><i class="home-collection" :class="item.collection ? 'active' : ''"></i>添加收藏</div>
+            <div>销量{{item.sales}}件</div>
+          </div>
         </li>
       </ul>
     </div>
+
   </div>
 </template>
 
@@ -132,6 +179,30 @@
           result: '',
           product_type_list: product_type_list,
           product_list: [
+            {
+              img: chengzi,
+              pruduct: '橙子',
+              description: '马来西亚进口鲜甜橙子一份3个',
+              price: '100',
+              collection: false,
+              sales: '200'
+            },
+            {
+              img: chengzi,
+              pruduct: '橙子',
+              description: '马来西亚进口鲜甜橙子一份3个',
+              price: '100',
+              collection: true,
+              sales: '200'
+            },
+            {
+              img: chengzi,
+              pruduct: '橙子',
+              description: '马来西亚进口鲜甜橙子一份3个',
+              price: '100',
+              collection: false,
+              sales: '200'
+            },
             {
               img: chengzi,
               pruduct: '橙子',

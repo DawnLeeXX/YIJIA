@@ -7,7 +7,6 @@
     -ms-transition: all .3s cubic-bezier(.55,0,.1,1);
     -o-transition: all .3s cubic-bezier(.55,0,.1,1);
     transition: all .3s cubic-bezier(.55,0,.1,1);
-    height:100%;
   }
   .vux-pop-out-enter-active,
   .vux-pop-out-leave-active,

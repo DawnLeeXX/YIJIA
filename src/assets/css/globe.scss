@@ -97,8 +97,18 @@ $color-primary: #ea541a;
   @extend .basis-flex-justify-content-center;
   @extend .basis-flex-align-items-center;
 }
-
-
+.flex-column-wrap-flex_start-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-column-wrap;
+  @extend .basis-flex-justify-content-flex_start;
+  @extend .basis-flex-align-items-center;
+}
+.flex-column-wrap-flex_start-flex_start {
+  @extend .basis-flex-father;
+  @extend .basis-flex-column-wrap;
+  @extend .basis-flex-justify-content-flex_start;
+  @extend .basis-flex-align-items-flex_start;
+}
 
 /* 覆盖mint ui 的样式 */
 /* 覆盖mint-ui的primary颜色，改为微信UI的绿色 */
@@ -163,7 +173,8 @@ $color-primary: #ea541a;
   .mint-searchbar {
     background-color: white;
     border-radius: 100px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
   }
 }
 .mint-swipe {
@@ -172,4 +183,9 @@ $color-primary: #ea541a;
     width: 100%;
   }
 }
-
+.mint-header {
+  height: 80px;
+  .mint-header-title {
+    font-size: 30px;
+  }
+}
