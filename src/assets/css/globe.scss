@@ -1,4 +1,5 @@
 $color-primary: #ea541a;
+$color-minor: #ef7b1d;
 .theme-gradient {
   background:-webkit-linear-gradient(left,#ea541a,#ef7b1c);
   background:-o-linear-gradient(right,#ea541a,#ef7b1c);
@@ -85,6 +86,12 @@ $color-primary: #ea541a;
   @extend .basis-flex-justify-content-space_between;
   @extend .basis-flex-align-items-center;
 }
+.flex-row-wrap-space_between-flex_start {
+  @extend .basis-flex-father;
+  @extend .basis-flex-row-wrap;
+  @extend .basis-flex-justify-content-space_between;
+  @extend .basis-flex-align-items-flex_start;
+}
 .flex-row-wrap-space_around-center {
   @extend .basis-flex-father;
   @extend .basis-flex-row-wrap;
@@ -114,7 +121,8 @@ $color-primary: #ea541a;
 /* 覆盖mint-ui的primary颜色，改为微信UI的绿色 */
 
 .mint-header {
-  background-color: $color-primary;
+  @extend .theme-gradient;
+  z-index: 1000;
 }
 .mint-button:not(.is-disabled):active::after {
   opacity: .2 /* .6 */
