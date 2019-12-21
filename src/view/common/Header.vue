@@ -11,10 +11,13 @@
 <template>
   <div class="header-contain">
     <mt-header :title="title ? title : ''">
-      <router-link v-if="left" to="/" slot="left">
+      <a v-if="left === 'back'" slot="left" @click="$router.history.go(-1)">
+        <mt-button icon="back"></mt-button>
+      </a>
+      <router-link v-else-if="left === 'back_member'" slot="left" to="/member">
         <mt-button icon="back"></mt-button>
       </router-link>
-      <div v-if="right === 'logout'" slot="right">
+      <div @click="logout" v-if="right === 'logout'" slot="right">
         退出
       </div>
     </mt-header>
@@ -31,6 +34,11 @@
     name: 'Header',
     data() {
         return {}
+    },
+    methods: {
+      logout () {
+        this.$router.push('login')
+      }
     }
   }
 </script>

@@ -7,7 +7,18 @@ $color-minor: #ef7b1d;
   background:linear-gradient(to right,#ea541a,#ef7b1c);
 }
 
+.common-button-style {
+  width: 80%;
+  height: 80px;
+  line-height: 80px;
+  color: white;
+  font-size: 35px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 80px;
+  @extend .theme-gradient
 
+}
 // flex 全局定义
 .basis-flex-father{
   display: -webkit-flex; /* Safari */
@@ -196,4 +207,7 @@ $color-minor: #ef7b1d;
   .mint-header-title {
     font-size: 30px;
   }
+}
+.mint-field.is-textarea .mint-cell-title {
+  align-self: flex-start;
 }

@@ -83,13 +83,13 @@
         </div>
       </div>
       <ul class="flex-row-wrap-space_around-center member-menu-list">
-        <li v-for="item in member_menu_list">
+        <li v-for="item in member_menu_list" @click="routerTo(item.type)">
           <div class="flex-row-wrap-center-center"><img :src="item.img" alt=""></div>
           <div class="member-menu-name">{{item.name}}</div>
         </li>
       </ul>
       <div class="member-router">
-        <mt-cell v-for="item in member_router_list" is-link :title="item.name">
+        <mt-cell v-for="item in member_router_list" :to="item.routerName" is-link :title="item.name">
           <img slot="icon" :src="item.img">
         </mt-cell>
       </div>
@@ -140,49 +140,67 @@ export default {
           type: 1,
           name: '个人资料',
           img: memberIcon01,
-          routerName: ''
+          routerName: '/personal_information'
         },
         {
           type: 2,
           name: '修改密码',
           img: memberIcon02,
-          routerName: ''
+          routerName: '/'
         },
         {
           type: 3,
           name: '我的红包',
           img: memberIcon03,
-          routerName: ''
+          routerName: '/'
         },
         {
           type: 4,
           name: '退换货订单',
           img: memberIcon04,
-          routerName: ''
+          routerName: '/'
         },
         {
           type: 5,
           name: '我的收藏',
           img: memberIcon05,
-          routerName: ''
+          routerName: '/'
         },
         {
           type: 6,
           name: '我的分享',
           img: memberIcon06,
-          routerName: ''
+          routerName: '/'
         },
         {
           type: 7,
           name: '缺货登记',
           img: memberIcon07,
-          routerName: ''
+          routerName: '/'
         },
       ]
     }
   },
   components: {
     Header
+  },
+  methods: {
+    routerTo(type) {
+      switch (type) {
+        case 1:
+          this.$router.push('/');
+          break;
+        case 2:
+          this.$router.push('/');
+          break;
+        case 3:
+          this.$router.push('/shipping_address');
+          break;
+        case 4:
+          this.$router.push('/');
+          break;
+      }
+    }
   }
 }
 </script>

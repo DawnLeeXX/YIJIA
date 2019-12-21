@@ -50,6 +50,31 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: () => import('../view/Register.vue')
-    }
+    },
+    {
+      path: '/shipping_address',
+      name: 'shipping_address',
+      component: () => import('../view/member/ShippingAddress')
+    },
+    {
+      path: '/shipping_address_add',
+      name: 'shipping_address_add',
+      component: () => import('../view/member/ShippingAddressAdd')
+    },
+    {
+      path: '/product_detail',
+      name: 'product_detail',
+      component: () => import('../view/ProductDetail')
+    },
+    {
+      path: '/personal_information',
+      name: 'personal_information',
+      component: () => import('../view/member/PersonalInformation')
+    },
+    {
+      path: '/unpaid',
+      name: 'unpaid',
+      component: () => import('../view/member/Unpaid')
+    },
   ]
 })

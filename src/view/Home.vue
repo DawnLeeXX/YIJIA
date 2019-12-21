@@ -100,7 +100,7 @@
     <div class="home-product-list">
       <ul class="flex-row-wrap-space_around-center">
         <li v-for="item in product_list">
-          <div class="flex-row-wrap-center-center"><img :src="item.img" alt=""></div>
+          <div class="flex-row-wrap-center-center"><img @click="$router.push('/product_detail')" :src="item.img" alt=""></div>
           <div>[{{item.pruduct}}] {{item.description}}</div>
           <div class="flex-row-wrap-space_between-center">
             <div class="home-price">P {{item.price}}</div>
