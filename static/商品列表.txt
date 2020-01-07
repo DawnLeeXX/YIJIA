@@ -1,0 +1,21 @@
+{
+	"code": null,
+	"message": null,
+	"data": {
+		"count": 0,//总数
+		"list": {
+			"goodId": 0,//商品id
+			"goodsIndexPath": null,//商品首页图片
+			"goodsTypePath": null,//商品分类列表图片
+			"goodsDetailPath": null,//商品详情图片
+			"goodsShopPath": null,//商品购物车图片
+			"goodName": null,//商品名称
+			"productAddress": null,//商品产地
+			"goodsWeight": null,//商品重量
+			"description": null,//商品描述
+			"leftQuality": 0,//剩余库存
+			"saleQuality": 0,//销量
+			"price": 0.0 //商品价格
+		}
+	}
+}

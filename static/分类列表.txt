@@ -1,0 +1,8 @@
+{
+	"code": null,
+	"message": null,
+	"data": [{
+		"typeCode": null, //分类编码
+		"typeName": null //分类名称
+	}]
+}

@@ -1,0 +1,9 @@
+{
+	"code": null,
+	"message": null,
+	"data": {
+		"username": null,//用户名
+		"giftPoint": 0, //积分
+		"registTime": null //注册时间
+	}
+}

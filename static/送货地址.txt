@@ -1,0 +1,10 @@
+{
+	"code": null,
+	"message": null,
+	"data": [{
+		"name": null,//联系姓名
+		"contactPhone": null,//联系电话
+		"address": null,//送货地址
+		"default": false//是否是默认地址
+	}]
+}

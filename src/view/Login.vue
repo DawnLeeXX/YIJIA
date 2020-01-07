@@ -84,6 +84,7 @@
 
 <script>
   import {mapActions} from 'vuex'
+  import axios from 'axios'
   export default {
     name: 'Login',
     data() {
@@ -103,6 +104,9 @@
         this.$router.push('register')
       },
       login() {
+        axios.get('../../static/loginInfo.json').then(res => {
+          console.log(res)
+        })
         if (this.isPassword === true) {
           this.setloginForm(Object.assign({},this.form))
         } else {
