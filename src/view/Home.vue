@@ -4,7 +4,7 @@
     height: 100vh;
     padding-bottom: 100px;
     overflow-y: scroll;
-    padding-top: 80px;
+    /*padding-top: 80px;*/
     .home-search {
       z-index: 1000;
       position: fixed;
@@ -77,9 +77,9 @@
 </style>
 <template>
   <div class="home-contain">
-    <div class="home-search">
-      <mt-search v-model="result"></mt-search>
-    </div>
+    <!--<div class="home-search">-->
+      <!--<mt-search v-model="result"></mt-search>-->
+    <!--</div>-->
 
     <mt-swipe :show-indicators="true" :auto="4000">
       <mt-swipe-item><img src="../assets/img/banner/banner.png" alt=""></mt-swipe-item>
@@ -90,7 +90,7 @@
 
     <div class="home-product-type-list">
       <ul class="flex-row-wrap-space_around-center">
-        <li v-for="item in product_type_list">
+        <li v-for="item in product_type_list" @click="$router.push('classify')">
           <div class="flex-row-wrap-center-center"><img :src="item.img" alt=""></div>
           <div>{{item.name}}</div>
         </li>

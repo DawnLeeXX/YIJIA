@@ -146,7 +146,7 @@ export default {
           type: 2,
           name: '修改密码',
           img: memberIcon02,
-          routerName: '/'
+          routerName: '/change_password'
         },
         {
           type: 3,
@@ -164,13 +164,13 @@ export default {
           type: 5,
           name: '我的收藏',
           img: memberIcon05,
-          routerName: '/'
+          routerName: '/favorite'
         },
         {
           type: 6,
           name: '我的分享',
           img: memberIcon06,
-          routerName: '/'
+          routerName: '/share'
         },
         {
           type: 7,
@@ -188,10 +188,10 @@ export default {
     routerTo(type) {
       switch (type) {
         case 1:
-          this.$router.push('/');
+          this.$router.push('/all_order');
           break;
         case 2:
-          this.$router.push('/');
+          this.$router.push('/un_paid');
           break;
         case 3:
           this.$router.push('/shipping_address');

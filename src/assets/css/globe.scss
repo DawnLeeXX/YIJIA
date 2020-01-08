@@ -85,6 +85,12 @@ $color-minor: #ef7b1d;
   @extend .basis-flex-justify-content-flex_start;
   @extend .basis-flex-align-items-center;
 }
+.flex-row-wrap-flex_end-center {
+  @extend .basis-flex-father;
+  @extend .basis-flex-row-wrap;
+  @extend .basis-flex-justify-content-flex_end;
+  @extend .basis-flex-align-items-center;
+}
 .flex-row-wrap-center-center {
   @extend .basis-flex-father;
   @extend .basis-flex-row-wrap;

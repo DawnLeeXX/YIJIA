@@ -72,6 +72,9 @@
     watch: {
       selected () {
         this.$router.push(`/${this.selected}`)
+      },
+      '$route'() {
+        this.selected = this.$route.name
       }
     }
   }

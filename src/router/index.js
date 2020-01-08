@@ -76,5 +76,30 @@ export default new Router({
       name: 'unpaid',
       component: () => import('../view/member/Unpaid')
     },
+    {
+      path: '/change_password',
+      name: 'change_password',
+      component: () => import('../view/member/ChangePassword')
+    },
+    {
+      path: '/all_order',
+      name: 'all_order',
+      component: () => import('../view/member/AllOrder')
+    },
+    {
+      path: '/un_paid',
+      name: 'un_paid',
+      component: () => import('../view/member/Unpaid')
+    },
+    {
+      path: '/share',
+      name: 'share',
+      component: () => import('../view/member/Share')
+    },
+    {
+      path: '/favorite',
+      name: 'favorite',
+      component: () => import('../view/member/Favorite')
+    },
   ]
 })
