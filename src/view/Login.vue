@@ -84,7 +84,7 @@
 
 <script>
   import {mapActions} from 'vuex'
-  import axios from 'axios'
+  import {loginInHttp} from '../api/authorizations'
   export default {
     name: 'Login',
     data() {
@@ -104,15 +104,20 @@
         this.$router.push('register')
       },
       login() {
-        axios.get('../../static/loginInfo.json').then(res => {
-          console.log(res)
+        // 登录请求
+        loginInHttp({name: this.form.username, password: this.form.password}).then(res => {
+          // 是否存储账号密码
+          this.storeUserPassword()
+          // 跳转到home页面
+          this.$router.push('home')
         })
-        if (this.isPassword === true) {
+      },
+      storeUserPassword() {
+        if (this.isPassword) {
           this.setloginForm(Object.assign({},this.form))
         } else {
           this.setloginForm(null)
         }
-        this.$router.push('home')
       }
     }
   }

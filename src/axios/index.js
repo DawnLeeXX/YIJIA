@@ -1,60 +1,41 @@
 import axios from 'axios'
-// import router from '../router'
-// import storejs from 'storejs'
+import { Toast } from 'mint-ui';
 axios.defaults.headers = {
   'Content-Type': `application/x-www-form-urlencoded; charset=UTF-8`,
   'Accept': 'application/json, text/plain, */*',
   'X-Requested-With': 'XMLHttpRequest'
 }
 axios.defaults.timeout = 10000
-axios.defaults.retry = 0
+axios.defaults.retry = 1
 axios.defaults.retryDelay = 1000
-// 添加请求拦截器
+// 添加请求拦截器    顾名思义 就是全局请求之前拦截去配置请求头或者其他信息
 axios.interceptors.request.use(config => {
-  // // 在发送请求之前做某事
+  // 在发送请求之前做某事
   // var token = storejs.get('access_token')
   // if (token && router.currentRoute.name !== 'Login') {
   //   config.headers.Authorization = 'Bearer ' + token
   // }
-  // return config
+  return config
 }, error => {
   // 请求错误时做些事
   // return Promise.reject(error)
 })
 
-// 添加响应拦截
+// 添加响应拦截器    顾名思义 就是全局请求完之后去做某些事情，比如token过期回到首页或者书写全局报错的弹出的message
 axios.interceptors.response.use(response => {
   // 对响应数据做些事
   return response.data
 }, err => {
-  // var config = err.config
-  // // If config does not exist or the retry option is not set, reject
-  // // if (!config || !config.retry) return Promise.reject(err)
-  // // Set the variable for keeping track of the retry count
-  // config.__retryCount = config.__retryCount || 0
-  // // Check if we've maxed out the total number of retries
-  // if (config.__retryCount >= config.retry) {
-  //   // Reject with the error
-  //   var statusCode = err.response.data.status_code
-  //   var message = err.response.data.message
-  //   if (statusCode === 401) {
-  //     router.push({name: 'Login'})
-  //   }
-  //   if (message) {
-  //
-  //   }
-  //   return Promise.reject(err)
-  // }
-  // // Increase the retry count
-  // config.__retryCount += 1
-  // // Create new promise to handle exponential backoff
-  // var backoff = new Promise(resolve => {
-  //   setTimeout(() => {
-  //     resolve()
-  //   }, config.retryDelay || 1)
-  // })
-  // // Return the promise in which recalls axios to retry the request
-  // return backoff.then(() => {
-  //   return axios(config)
-  // })
+  if (err.code === 'ECONNABORTED' || err.message === 'Network Error') {
+    Toast.fail('The request timeout', 3); // 消息提示
+  }
+  let message = err.response.data.message;
+  if (message) {
+    Toast({
+      message: message,
+      duration: 2000
+    });
+  }
+  return Promise.reject(err);
+
 })
